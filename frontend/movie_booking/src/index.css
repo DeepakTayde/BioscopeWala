@@ -1,0 +1,693 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  @apply bg-neutral-900 text-neutral-300 p-0 m-0
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+.one-fourth {
+  width: 25%;
+}
+.half {
+  width: 50%;
+}
+.navbar {
+  display: flex;
+  height: 10vh;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(32, 35, 36, 0.1);
+}
+.logo-with-appname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #e71d1d;
+}
+.app-name {
+  font-size: 25px;
+}
+.city-and-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.city-selection {
+  font-size: 5px;
+}
+.select-city {
+  font-size: 20px;
+}
+.options {
+  font-size: 25px;
+  font-weight: 300;
+  padding: 5px 0px 5px 5px;
+  border: none;
+  border-radius: 3px;
+  color: #464545;
+}
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.five-items {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+}
+.card-replace {
+  margin-bottom: 50px;
+}
+.title {
+  padding-top: 10px;
+  width: 250px;
+}
+.black {
+  background-color: rgb(38, 37, 37);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0px 10px;
+  font-size: 18px;
+}
+.rating-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.genre1 {
+  color: rgb(119, 115, 115);
+}
+.movie-detail-background {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 239, 234);
+}
+.movie-detail {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 25px;
+  flex-direction: column;
+  background-color: white;
+}
+.poster-trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.without-img {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.movie-details {
+  width: 85%;
+}
+.movie {
+  padding-top: 10px;
+  margin: 0px;
+}
+.actors {
+  width: 1000px;
+}
+.director,
+.actors,
+.languages,
+.genre2,
+.rating,
+.duration {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgb(57, 54, 54);
+}
+.description {
+  margin: 5px 0px 10px 0px;
+  color: rgb(95, 93, 93);
+}
+.book-tickets-div {
+  text-align: end;
+}
+.all-screenings-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: rgb(247, 239, 234);
+}
+.screenings-border {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  min-height: 80vh;
+  width: 800px;
+  gap: 50px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 50px;
+}
+.dates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.date-button {
+  border-radius: 10px;
+  background-color: rgb(237, 132, 132);
+  border: none;
+  padding: 7px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+.date-button:hover {
+  border: 2px solid rgb(161, 64, 64);
+}
+.column-screenings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.each-screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-theater-details {
+  display: flex;
+  flex-direction: column;
+}
+.theatre-star {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+.theatre-name {
+  margin: 0px;
+  font-size: 25px;
+  font-weight: 300;
+}
+.times {
+  display: flex;
+  gap: 20px;
+}
+.time {
+  margin: 0px;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 5px 7px;
+  color: green;
+  background-color: white;
+  border: 1px solid rgb(200, 196, 196);
+}
+.time:hover {
+  color: white;
+  background-color: green;
+}
+.area {
+  padding-left: 30px;
+}
+.seating-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  background-color: rgb(247, 239, 234);
+}
+.seating-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.seating-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  min-height: 55vh;
+  min-width: 45vw;
+  background-color: rgb(30, 6, 104);
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0px 35px 0px;
+}
+.title-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.continue {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.continue.disable {
+  background-color: #d1cfcf;
+}
+
+.App {
+  text-align: center;
+}
+
+.seat-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+.seat {
+  padding: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.premium {
+  background-color: gold;
+}
+
+.regular {
+  background-color: white;
+}
+
+.booked {
+  background-color: rgb(163, 160, 160);
+  color: white;
+}
+
+.selected {
+  background-color: green;
+  color: white;
+}
+.booking-detail-background {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  gap: 40px;
+  background-color: rgb(247, 239, 234);
+}
+.booking-details {
+  display: flex;
+  justify-content: space-between;
+  min-height: 70vh;
+  min-width: 60vw;
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+  gap: 40px;
+}
+.booking-with-heading {
+  width: 50%;
+}
+.booking-with-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.basic-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #646262;
+}
+.payment-box {
+  background-color: #f3f3f3;
+
+  width: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.summary-details {
+  display: flex;
+}
+.sub-total {
+  font-size: 20px;
+  font-weight: 500;
+}
+.total {
+  font-size: 23px;
+  font-weight: 500;
+}
+.order-summary {
+  padding-bottom: 15px;
+}
+.pay-parallel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding-bottom: 15px;
+  gap: 40px;
+}
+.pay-button {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+}
+.booking-confirmation-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: rgb(247, 239, 234);
+}
+.booking-confirmed-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+  min-width: 55vw;
+  padding: 60px;
+  background-color: white;
+  border-radius: 10px;
+  gap: 50px;
+}
+
+.user-profile-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: rgb(247, 239, 234);
+}
+.user-profile-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+  min-width: 70vw;
+  padding: 60px;
+  border: 2px solid black;
+}
+.user-sub-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.search-filter {
+  display: flex;
+
+  align-items: center;
+
+  padding: 30px;
+}
+.language {
+  max-width: 500px;
+  display: flex;
+  gap: 10px;
+}
+.genre {
+  max-width: 500px;
+  width: 33.33%;
+  display: flex;
+  gap: 10px;
+}
+.book-tickets {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+}
+.search-input {
+  width: 100%;
+  font-size: 20px;
+  padding: 7px;
+}
+.search-input::placeholder {
+  color: rgb(151, 149, 149);
+  opacity: 1;
+  font-weight: 300;
+}
+
+.search-results-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+}
+
+.search-result-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0;
+}
+.no-results-message {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  width: 100%;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.profile {
+  display: flex;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  text-align: center;
+  background-color: #007bff;
+  padding: 7px 13px;
+  color: white;
+  font-size: 20px;
+}
+
+.delete-account-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.delete-account-button:hover {
+  background-color: #ff1a1a;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #999;
+}
+.profile-button {
+  background-color: #fff;
+}
+.all-movies-background {
+  background-color: rgb(247, 239, 234);
+  min-height: 100vh;
+}
+.language-genre {
+  display: flex;
+  padding: 40px 50px 0px 100px;
+  gap: 200px;
+}
+.filter-button {
+  border-radius: 5px;
+  border: none;
+}
+.tick {
+  color: green;
+  border: 3px solid green;
+  border-radius: 100%;
+  padding: 0px;
+}
+.booking-tick {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.booking-confirmed {
+  margin: 0px;
+}
+.confirmed-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.confirmed-heading {
+  display: flex;
+  width: 100%;
+}
+.my-bookings-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: rgb(247, 239, 234);
+}
+.my-bookings-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  width: 50vw;
+  background-color: white;
+  margin: 70px;
+  padding: 25px 50px;
+  gap: 50px;
+  border-radius: 20px;
+}
+.bookings-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.booking-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.booking-row:hover{
+  border: 1px solid black;
+  background-color: rgb(230, 226, 226);
+  border-radius: 10px;
+
+}
+.poster-title {
+  display: flex;
+  gap: 10px;
+  width: 300px;
+}
+.title-date {
+  color: #646262;
+  font-size: 16px;
+}
+.bookings-title {
+  text-align: center;
+}
