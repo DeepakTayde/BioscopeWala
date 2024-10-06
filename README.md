@@ -1,9 +1,9 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/lAdyXzm8L54tBytG360B" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
-
-# Getting Started with Create React App
 # BioscopeWala Documentation
 ## Overview
 **BioscopeWala** is a web application designed for booking movie tickets. It provides users with an intuitive interface to browse and book tickets for their favorite movies.
+![image](https://github.com/user-attachments/assets/b0524847-0322-4152-a6c9-8db2f7bde56d)
+
+![image](https://github.com/user-attachments/assets/ffb701ed-0d30-416f-b2cf-bbd14acb0d78)
 
 ## Features
 - **Movie Ticket Booking**: Users can search for movies, view showtimes, and book tickets.
@@ -81,6 +81,3 @@ This section has moved here: [﻿https://facebook.github.io/create-react-app/doc
 ### `npm run build` fails to minify
 This section has moved here: [﻿https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) 
 
-
-
-<!--- Eraser file: https://app.eraser.io/workspace/lAdyXzm8L54tBytG360B --->
