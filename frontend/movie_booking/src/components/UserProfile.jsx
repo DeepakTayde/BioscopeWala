@@ -96,11 +96,16 @@ function ProfileView() {
   };
 
   return (
-    <div className="profile-center user-profile-background"   >
-      <div className="container">
-        <h2>User Profile</h2>
+    <div className="flex justify-center items-center">
+      <div className="container p-5 rounded-md w-auto my-2 h-auto bg-blue-950">
+        <div className="flex flex-col justify-center gap-2 items-center">
+          <div className="text-center">
+          <h2 className="text-white">User Profile</h2>
+          <hr className="bg-white" ></hr>
+          </div>
         {!isEditing ? (
-          <div>
+          <div  className="flex flex-col gap-2 items-start text-white">
+
             <p>
               <strong>Name:</strong> {userProfile.name}
             </p>
@@ -110,18 +115,19 @@ function ProfileView() {
             <p>
               <strong>Email:</strong> {userProfile.email}
             </p>
-            <button
+              <div className="flex justify-between text-center gap-3">
+              <button
               onClick={() => setIsEditing(true)}
-              className="btn btn-secondary"
+              className="bg-neutral-600 rounded-md text-center p-2 text-white"
             >
               Edit
             </button>
-            <Link to="/change-password" className="btn btn-warning ml-2">
+            <Link to="/change-password" className="bg-yellow-500 rounded-md text-center p-2 text-white">
               Change Password
             </Link>
             <button
               onClick={() => setModalOpen(true)}
-              className="delete-account-button"
+              className="bg-red-500 rounded-md text-center p-2 text-white"
             >
               Delete Account
             </button>
@@ -138,6 +144,7 @@ function ProfileView() {
                 be undone.
               </p>
             </Modal>
+              </div>
           </div>
         ) : (
           <Formik
@@ -213,6 +220,7 @@ function ProfileView() {
             )}
           </Formik>
         )}
+        </div>
       </div>
     </div>
   );

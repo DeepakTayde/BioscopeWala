@@ -28,42 +28,47 @@ function MyBookings() {
   };
 
   return (
-    <div className="my-bookings-background">
-      <div className="my-bookings-details">
-        <div className="bookings-title">
-          <h2>My Bookings</h2>
-          <hr></hr>
+    <div className="container p-5 rounded-md  my-2 min-h-[80vh] bg-blue-950">
+      <div className="flex flex-col justify-center gap-2 items-center">
+        <div className="text-center ">
+          <h2 className="text-white">My Bookings</h2>
+          <hr className="bg-white"></hr>
         </div>
 
-        <div className="bookings-column">
+
           {bookings.length === 0 ? (
             <p>No bookings found.</p>
           ) : (
             bookings.map((booking) => (
               <div
                 key={booking.booking_id}
-                className="booking-row"
+                className="bg-blue-900 w-auto py-3 px-10 rounded-md flex justify-center"
                 onClick={() => handleNavigate(booking.booking_id)}
               >
-                <div className="poster-title">
+                <div className="flex justify-between items-center gap-4">
                   <img
                     src={booking.screening_object.movie_object.poster_url}
                     alt={booking.screening_object.movie_object.title}
-                    style={{ width: "70px", height: "100px" }}
+                    // style={{ width: "70px", height: "100px" }}
+                    className="rounded-md h-40"
                   />
-                  <div>
-                    <h5>{booking.screening_object.movie_object.title}</h5>
-                    <h5 className="title-date">
+                  <div  className="flex flex-col justify-center">
+
+                    <h5 className="text-white text-3xl font-bold">{booking.screening_object.movie_object.title}</h5>
+                    <h5 className="text-neutral-300">
                       {formatDateTime(booking.screening_object.date_time)}
                     </h5>
                   </div>
+                  <div  className="flex  justify-center items-center gap-2">
+
+                  <h5 className="text-white font-bold">{booking.status}  </h5>
+                  <h5 className="text-neutral-300"> ₹{calculateTotal(booking)}</h5>
+                  </div>
                 </div>
-                <h5>{booking.status}</h5>
-                <h5>₹ {calculateTotal(booking)}</h5>
+
               </div>
             ))
           )}
-        </div>
       </div>
     </div>
   );

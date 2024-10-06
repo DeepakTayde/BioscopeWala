@@ -116,13 +116,13 @@ function BookingDetail() {
           booking.screening_object.movie_object &&
           booking.screening_object.date_time ? (
             <div className="booking-with-img">
-              <div className="basic-details">
-                <h4>{booking.screening_object.movie_object.title}</h4>
-                <h5>{booking.screening_object.movie_object.languages}</h5>
-                <h5>{booking.screening_object.movie_object.genre}</h5>
-                <h5>{booking.screening_object.theatre_object.name}</h5>
-                <h5>{booking.screening_object.theatre_object.address}</h5>
-                <h5>{formatDateTime(booking.screening_object.date_time)}</h5>
+              <div className="flex flex-col gap-1 text-white">
+                <h4 className="text-3xl font-bold">{booking.screening_object.movie_object.title}</h4>
+                <h5 className="text-sm">{booking.screening_object.movie_object.languages}</h5>
+                <h5 className="text-sm">{booking.screening_object.movie_object.genre}</h5>
+                <h5 className="text-sm">{booking.screening_object.theatre_object.name}</h5>
+                <h5 className="text-sm">{booking.screening_object.theatre_object.address}</h5>
+                <h5 className="text-sm">{formatDateTime(booking.screening_object.date_time)}</h5>
               </div>
 
               <div>
@@ -130,7 +130,7 @@ function BookingDetail() {
                   src={booking.screening_object.movie_object.poster_url}
                   width={105}
                   height={150}
-                ></img>
+                alt="poster"></img>
               </div>
             </div>
           ) : (
@@ -138,16 +138,16 @@ function BookingDetail() {
           )}
         </div>
 
-        <div className="payment-box">
-          <h3 className="order-summary">Order Summary:</h3>
+        <div className="container bg-blue-900 rounded-md p-2 text-white">
+          <h3 className="text-3xl font-bold">Order Summary:</h3>
           <br></br>
 
-          <div>
+          <div className="flex flex-col gap-0 lg:block">
             {booking && booking.seats && booking.seats.length > 0 ? (
               <div>
                 {/* Premium Seats */}
                 {booking.seats.filter((seat) => seat.is_premium).length > 0 && (
-                  <div className="pay-parallel">
+                  <div className="">
                     <div>
                       Premium Seats:{" "}
                       {booking.seats
@@ -168,7 +168,7 @@ function BookingDetail() {
                 {/* Regular Seats */}
                 {booking.seats.filter((seat) => !seat.is_premium).length >
                   0 && (
-                  <div className="pay-parallel">
+                  <div className="">
                     <div>
                       Regular Seats:{" "}
                       {booking.seats

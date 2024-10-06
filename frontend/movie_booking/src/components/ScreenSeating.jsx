@@ -12,26 +12,24 @@ function ScreenSeating() {
   const navigate = useNavigate();
   const location = useLocation();
   const token = getToken();
- 
+
   // Check authentication and redirect to login if not authenticated
   useEffect(() => {
-
     if (!token) {
       // If no token, redirect to login and pass current path in state for redirect after login
       navigate("/signin", { state: { redirectTo: location.pathname } });
     }
   }, [navigate, location, token]);
-  
+
   // Fetch seats
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/${city}/screening-seats/${id}/`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        })
+      .get(`http://127.0.0.1:8000/api/${city}/screening-seats/${id}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => setSeats(response.data))
       .catch((error) => console.log(error));
   }, [id, city, token]);
@@ -86,7 +84,6 @@ function ScreenSeating() {
       screening: id,
     };
 
-
     const token = getToken();
 
     axios
@@ -105,58 +102,62 @@ function ScreenSeating() {
   }
 
   return (
-    <div className="seating-background">
-      <div className="seating-info">
-        {screening.movie_object ? (
-          <div className="title-time">
-            <h2>{screening.movie_object.title}</h2>
-            <h5>
-              {screening.theatre_object.name},{" "}
-              {screening.theatre_object.address} -{" "}
-              {formatDateTime(screening.date_time)}
-            </h5>
-          </div>
-        ) : (
-          <p>Loading movie details...</p>
-        )}
+    <section className="flex justify-center items-center">
+      <div className="container p-10 rounded-md  my-2 min-h-[80vh] bg-blue-950">
+        <div className="flex flex-col justify-center items-center">
+          {screening.movie_object ? (
+            <div className="title-time">
+              <h2 className="text-white text-3xl font-bold">
+                {screening.movie_object.title}
+              </h2>
+              <h5 className="text-white">
+                {screening.theatre_object.name},{" "}
+                {screening.theatre_object.address} -{" "}
+                {formatDateTime(screening.date_time)}
+              </h5>
+            </div>
+          ) : (
+            <p>Loading movie details...</p>
+          )}
 
-        <div className="seating-border">
-          <div className="seat-container">
-            {seats.length > 0 ? (
-              seats.map((seat) => (
-                <div
-                  key={seat.id}
-                  onClick={() => handleSeatClick(seat)}
-                  className={getSeatClassName(seat)}
-                >
-                  {seat.row}
-                  {seat.number}
-                </div>
-              ))
-            ) : (
-              <p>Loading seats...</p>
-            )}
+          <div className="seating-border">
+            <div className="seat-container">
+              {seats.length > 0 ? (
+                seats.map((seat) => (
+                  <div
+                    key={seat.id}
+                    onClick={() => handleSeatClick(seat)}
+                    className={getSeatClassName(seat)}
+                  >
+                    {seat.row}
+                    {seat.number}
+                  </div>
+                ))
+              ) : (
+                <p>Loading seats...</p>
+              )}
+            </div>
+            <img
+              src="https://assetscdn1.paytm.com/movies_new/_next/static/media/screen-icon.8dd7f126.svg"
+              alt="Screen Icon"
+              style={{ transform: "scale(0.80)" }}
+            />
           </div>
-          <img
-            src="https://assetscdn1.paytm.com/movies_new/_next/static/media/screen-icon.8dd7f126.svg"
-            alt="Screen Icon"
-            style={{ transform: "scale(0.80)" }}
-          />
-        </div>
 
-        <div>
-          <button
-            className={`continue ${
-              newlyBookedSeats.length === 0 ? "disable" : ""
-            }`}
-            onClick={handleClick}
-            disabled={newlyBookedSeats.length === 0}
-          >
-            Continue
-          </button>
+          <div className=" relative">
+            <button
+              className={`continue ${
+                newlyBookedSeats.length === 0 ? "disable" : ""
+              }`}
+              onClick={handleClick}
+              disabled={newlyBookedSeats.length === 0}
+            >
+              Continue
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

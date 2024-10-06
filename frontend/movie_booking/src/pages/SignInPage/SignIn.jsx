@@ -46,7 +46,7 @@ function SignIn() {
       .min(6, "password must be minimum of 6 characters"),
   });
   return (
-    <div className="login-center" style={{ backgroundColor: "#f7f0f0" }}>
+    <div className="login-center">
       <div className="container">
         <div className="row">
           <div className="one-fourth"></div>

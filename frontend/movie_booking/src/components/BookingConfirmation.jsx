@@ -27,7 +27,7 @@ function BookingConfirmation() {
       )
       .then((Response) => setBooking(Response.data))
       .catch((error) => console.log(error));
-  }, [id]);
+  }, [city, id, token]);
 
   function extractTime(dateTimeString) {
     const date = new Date(dateTimeString);
@@ -61,58 +61,60 @@ function BookingConfirmation() {
   }
 
   return (
-    <div className="booking-confirmation-background">
-      <div className="booking-confirmed-details">
-        <div className="confirmed-heading">
-          <div className="booking-tick">
-            <h2 className="booking-confirmed">
+    <section className="flex justify-center items-center">
+      <div className="container p-5 rounded-md  my-2 min-h-[80vh] bg-blue-950">
+        <div className="flex flex-col justify-center gap-2 items-center">
+
+          <div className="flex gap-2 justify-center items-center mb-2 bg-blue-900 py-3 px-4 rounded-md">
+            <h2 className="text-white text-3xl font-bold">
               Booking confirmed successfully
             </h2>
-
             <TiTick className="tick" size={25} />
           </div>
-        </div>
+
         {booking &&
         booking.screening_object &&
         booking.screening_object.movie_object &&
         booking.screening_object.date_time ? (
-          <div className="confirmed-details">
+          <div className="flex justify-center gap-10">
             <img
               src={booking.screening_object.movie_object.poster_url}
-              width="280"
-              height={400}
+              // width="280"
+              // height={}
               alt="Movie Poster"
+              className="rounded-md max-h-80"
             />
-            <div>
-              <h2>
+            <div className="flex flex-col justify-evenly items-start">
+              <h2 className="text-white font-bold m-0">
                 {booking.screening_object.movie_object.title} (
                 {booking.screening_object.movie_object.languages})
               </h2>
-              <h5>{booking.screening_object.movie_object.genre}</h5>
-              <br></br>
-              <h5>
+              <h5 className="text-neutral-300 m-0">{booking.screening_object.movie_object.genre}</h5>
+              <hr className="bg-white"></hr>
+              <h5 className="text-neutral-300 m-0">
                 {booking.screening_object.theatre_object.name},{" "}
                 {booking.screening_object.theatre_object.address}
               </h5>
-              <h5>{extractTime(booking.screening_object.date_time)}</h5>
-              <h5>{extractDate(booking.screening_object.date_time)}</h5>
-              <h5>
+              <h5 className="text-neutral-300 m-0">{extractTime(booking.screening_object.date_time)}</h5>
+              <h5 className="text-neutral-300 m-0">{extractDate(booking.screening_object.date_time)}</h5>
+              <h5 className="text-neutral-300 m-0">
                 {booking.seats
                   .map((seat) => `${seat.row}${seat.number}`)
                   .join(", ")}
               </h5>
-              <h5>Price: ₹{calculateTotal().toFixed(2)}</h5>
+              <h5 className="text-neutral-300 m-0">Price: ₹{calculateTotal().toFixed(2)}</h5>
             </div>
           </div>
         ) : (
           <p>Loading booking details...</p>
         )}
 
-        <h5 className="text-center">
+        <h5 className="text-center text-neutral-300 m-0">
           See all your bookings <Link to="/my_bookings">here</Link>.
         </h5>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
