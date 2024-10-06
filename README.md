@@ -1,6 +1,8 @@
 # BioscopeWala Documentation
 ## Overview
 **BioscopeWala** is a web application designed for booking movie tickets. It provides users with an intuitive interface to browse and book tickets for their favorite movies.
+![image](https://github.com/user-attachments/assets/b0524847-0322-4152-a6c9-8db2f7bde56d)
+
 
 ## Features
 - **Movie Ticket Booking**: Users can search for movies, view showtimes, and book tickets.
