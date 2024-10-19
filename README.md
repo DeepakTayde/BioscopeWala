@@ -17,8 +17,8 @@ BioscopeWala is a movie ticket booking web application designed to provide users
 - **Backend Framework**: Built using Django and Python, the backend efficiently handles booking logic, user data management, and transaction processing.
 - **Database Integration**: Uses robust database management systems for storing movie details, user accounts, and transaction records.
 
-  BioscopeWala showcases the integration of multiple technologies to build a real-world, functional application, aimed at enhancing the user experience in the entertainment industry.
-## Front-End
+## BioscopeWala showcases the integration of multiple technologies to build a real-world, functional application, aimed at enhancing the user experience in the entertainment industry.
+- ## Front-End
 The front-end of BioscopeWala is built using the following technologies:
 
 - **HTML**: Structure of the web pages.
@@ -27,11 +27,11 @@ The front-end of BioscopeWala is built using the following technologies:
 - **React**: Component-based architecture for building the user interface.
 - **Redux**: State management across the application.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
-## Back-End
+- ## Back-End
 The back-end of BioscopeWala is powered by:
 
 - **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
-## Database
+- ## Database
 - **MongoDB
 This project was bootstrapped with [﻿Create React App](https://github.com/facebook/create-react-app).
 
