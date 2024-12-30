@@ -83,10 +83,34 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': "bioscopeWalaDB",
-        "HOST": "127.0.0.1",
-        "PORT": "27017",
+        # 'HOST': "192.168.0.113",
+        # 'HOST': "host.docker.internal",
+        # 'PORT' : "27017",
+        # "USERNAME": "deepaktayde559",
+        # "PASSWORD" : "Deepak@0511",
+        # "AUTH_SOURCE" : "admin",
+        # "ENFORCE_SCHEMA": False,
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': '192.168.0.108',
+            'port': 27017,
+        },
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': "bioscopeWalaDB",
+#         # 'HOST': "192.168.0.113",  # Ensure this is correct
+#         'HOST': "host.docker.internal",  # Ensure this is correct
+#         'PORT': "27017",
+#         "USERNAME": "deepaktayde559",
+#         "PASSWORD": "Deepak@0511",
+#         "AUTH_SOURCE": "admin",
+#         "ENFORCE_SCHEMA": False,
+#     }
+# }
 
 
 # Password validation
